@@ -13,7 +13,7 @@ function Filter({ sortBy, setSortBy }) {
             name="sortby"
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="pl-8 border-none text-2xl outline-none px-1 py-1 bg-transparent appearance-none"
+            className="pl-8 border-none text-2xl outline-none px-1 cursor-pointer py-1 bg-transparent appearance-none"
           >
             <option value="sort">Sort by</option>
             <option value="cheap">Cheap</option>
