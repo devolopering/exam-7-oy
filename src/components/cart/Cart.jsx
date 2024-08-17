@@ -113,10 +113,12 @@ const Cart = () => {
               </div>
               <div className='mb-20 mt-[76px]  max-w-[460px] ml-20 '>
                 <p className='text-lg font-inter font-light '>Have a coupon/promotional code? Enter your code</p>
-                <div className='flex items-start gap-5 w-full justify-between mt-5'>
-                  <input type="text" className='border-b-2 bordr-[#ccc] outline-none w-3/4  mt-5 pb-4 ' />
-                  <button className='border-[#0BA42D] text-lg font-bold font-inter text-[#0BA42D] border-2 py-2 px-[26px] rounded-[10px] duration-300 hover:bg-[#0BA42D] hover:text-white '>APPLY</button>
-                </div>
+                <form onSubmit={(e) => e.preventDefault()} className='flex items-start gap-5 w-full justify-between mt-5'>
+                  <input type="text" required className='border-b-2 border-[#ccc] outline-none w-3/4 mt-5 pb-4' />
+                  <button type='submit' className='border-[#0BA42D] text-lg font-bold font-inter text-[#0BA42D] border-2 py-2 px-[26px] rounded-[10px] duration-300 hover:bg-[#0BA42D] hover:text-white'>
+                  APPLY
+                  </button>
+                 </form>
           </div>
               </div>
               <div className='w-2/6'>
