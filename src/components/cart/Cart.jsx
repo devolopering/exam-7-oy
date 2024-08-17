@@ -44,7 +44,7 @@ const Cart = () => {
       <div className="max-w-full">
         {cartItems.length === 0 ? (
           <div className="text-center flex flex-col gap-5 py-10">
-            <p className="font-bold text-4xl">Your cart is empty:)</p>
+            <p className="font-bold text-4xl">Your cart is empty :)</p>
           </div>
         ) : (
           <div>
