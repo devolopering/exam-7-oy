@@ -26,7 +26,7 @@ const Cart = () => {
   };
 
   const confirmRemoveItem = () => {
-    dispatch(updateCartItem({ id: selectedItemId, type: 'remove' })); // O'chirish aksiyasini to'g'ri chaqirish
+    dispatch(updateCartItem({ id: selectedItemId, type: 'remove' })); 
     setShowModal(false);
     setSelectedItemId(null);
   };
@@ -49,7 +49,7 @@ const Cart = () => {
         ) : (
           <div>
             <div className='flex items-start gap-3 max-[1298px] mx-auto justify-between'>
-              <div className=' pr-3  w-full'>
+              <div className=' pr-3  w-full overflow-y-auto h-[80vh] scrollbar-hide'>
               <div className="px-5 border-r-2  mr-auto border-[#ccc] w-full">
                 <div className='w-full border ] mr-auto border-[#454444] border-dashed'></div>
                 <div className='w-full flex items-center justify-between mb-2 mt-3   mr-auto'>
@@ -103,7 +103,7 @@ const Cart = () => {
                               <FaPlus className='text-xl'/>
                             </button>
                           </div>
-                          <h3 className=" text-blue-800 font-semibold text-center">${item.totalPrice}</h3>
+                          <h3 className=" text-[#0D2612] font-bold font-readex text-center">${item.totalPrice}</h3>
                         </div>
                       </div>
                     </div>

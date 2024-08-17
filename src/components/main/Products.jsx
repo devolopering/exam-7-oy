@@ -3,7 +3,7 @@ import { LuShoppingCart } from "react-icons/lu";
 import { useDispatch, useSelector } from 'react-redux';
 import { saveProducts, setError, setLoading } from '../../store/productSlice';
 import { addToCart } from '../../store/cartSlice';
-import { Link } from 'react-router-dom'; // Link komponentini import qilish
+import { Link } from 'react-router-dom'; 
 
 const Products = ({ selectedColor, selectedBrand, sortBy }) => {
   const dispatch = useDispatch();

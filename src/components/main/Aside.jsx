@@ -11,7 +11,7 @@ const Aside = ({ setSelectedBrand, setSelectedColor, selectedBrand, selectedColo
   const { colors, colorLoading, colorError } = useSelector((state) => state.colors);
   const conectiv = ['2.4 GHz wireless technology', '3.5mm audio input', 'Bluetooth', 'LIGHTSPEED wireless technology', 'Wired USB input', 'USB-C'];
 
-  const [selectedConect, setSelectedConect] = useState(""); // Tanlangan elementni saqlash uchun state
+  const [selectedConect, setSelectedConect] = useState(""); 
 
   useEffect(() => {
     async function fetchColors() {

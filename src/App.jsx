@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './App.css';
 import Header from './components/header/Header';
 import Home from './components/main/Home';
-import Product from './components/main/Product'; // Import Product sahifasini
+import Product from './components/main/Product'; 
 import Cart from './components/cart/Cart';
 import Footer from './components/footer/Footer';
 

@@ -11,7 +11,7 @@ export const cartSlice = createSlice({
     addToCart: (state, action) => {
       const existingItem = state.items.find(item => item.id === action.payload.id);
       if (existingItem) {
-        // Boshqa joyda updateCartItem orqali miqdorni oshiring
+   
       } else {
         state.items.push({ ...action.payload, quantity: action.payload.quantity || 1, totalPrice: action.payload.price });
       }

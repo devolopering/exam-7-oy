@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { addToCart, updateCartItem } from '../../store/cartSlice'; // Import updateCartItem if not already imported
+import { addToCart, updateCartItem } from '../../store/cartSlice'; 
 import { FaMinus, FaPlus, FaRegHeart } from 'react-icons/fa';
 import { LuShoppingCart } from "react-icons/lu";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
@@ -17,7 +17,6 @@ import hdmi from '/HDMI.svg';
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-  // const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
   const cartItem = cartItems.find(item => item.id === id);
