@@ -83,7 +83,7 @@ const Aside = ({ setSelectedBrand, setSelectedColor, selectedBrand, selectedColo
                   name={"brand"}
                   onChange={() => setSelectedBrand(brand)}
                   checked={selectedBrand === brand}
-                  className='mr-4 cursor-pointer peer-checked:border-[#0BA42D] w-4 h-4'
+                  className='mr-4 cursor-pointer checked:border-[#0BA42D] border-2 w-5 h-5'
                 />
                 <label htmlFor={brand} className='cursor-pointer font-light text-lg font-readex'>{brand}</label>
               </li>
@@ -104,7 +104,7 @@ const Aside = ({ setSelectedBrand, setSelectedColor, selectedBrand, selectedColo
         name={`conect-${index}`}
         checked={selectedConect === conect}
         onChange={() => setSelectedConect(conect)}
-        className="mr-4 cursor-pointer outline-[#0BA42D] w-5 h-5 border flex-shrink-0" 
+        className="mr-4 cursor-pointer checked:border-[#0BA42D] checked:bg-[#0BA42D] w-5 h-5 border flex-shrink-0" 
       />
       <label
         htmlFor={`conect-${index}`}
