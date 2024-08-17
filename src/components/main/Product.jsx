@@ -168,6 +168,7 @@ const Product = () => {
             <TiArrowSortedDown className='text-[#0BA42D] cursor-pointer text-3xl' />
           </h3>
           <div className='w-full border border-[#454444] border-dashed mb-12 mt-5'></div>
+
         </div> 
       </div>
       <div className='bg-[#0D2612] pt-28 pb-32'>

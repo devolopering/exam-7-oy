@@ -10,7 +10,9 @@ const Aside = ({ setSelectedBrand, setSelectedColor, selectedBrand, selectedColo
   const { brands, brandLoading, brandError } = useSelector((state) => state.brands);
   const { colors, colorLoading, colorError } = useSelector((state) => state.colors);
   const conectiv = ['2.4 GHz wireless technology', '3.5mm audio input', 'Bluetooth', 'LIGHTSPEED wireless technology', 'Wired USB input', 'USB-C'];
-
+  const [showBrand, setShowBrand] = useState(true)
+  const [showConect, setShowConect] = useState(true)
+  const [showColor, setShowColor] = useState(true)
   const [selectedConect, setSelectedConect] = useState(""); 
 
   useEffect(() => {
@@ -62,8 +64,14 @@ const Aside = ({ setSelectedBrand, setSelectedColor, selectedBrand, selectedColo
     <div className='w-[250px]'>
       <div>
         <div className='w-full border border-[#454444] border-dashed mb-6'></div>
-        <h1 className=' font-normal font-hammersmith text-xl  mb-2 flex items-center justify-between'>BRAND <IoMdArrowDropup className='text-[#0BA42D] cursor-pointer text-2xl' /></h1>
-        <div className="flex flex-wrap flex-col">
+        <h1 className='font-normal font-hammersmith text-xl mb-2 flex items-center justify-between'>
+          BRAND 
+          <IoMdArrowDropup 
+           onClick={() => setShowBrand(!showBrand)} 
+           className={`text-[#0BA42D] cursor-pointer text-3xl transition-transform duration-500 ${showBrand === false ? 'rotate-180' : ''}`} 
+      />
+    </h1>
+       {showBrand && <div className="flex flex-wrap flex-col">
           <ul className="flex items-start mt-5 flex-col">
             {brandLoading && <p>Brand Loading...</p>}
             {brandError && <p className='text-red-600'>{brandError}</p>}
@@ -81,12 +89,13 @@ const Aside = ({ setSelectedBrand, setSelectedColor, selectedBrand, selectedColo
               </li>
             ))}
           </ul>
-        </div>
+        </div>}
       </div>
       <div className='w-full border border-[#454444] border-dashed mb-6 mt-6'></div>
       <div>
-        <h1 className='font-bold mb-2 flex items-center justify-between '>CONNECTIVITY <IoMdArrowDropup className='text-[#0BA42D] cursor-pointer text-2xl' /></h1>
-      <ul className="flex items-start  mt-5 flex-col">
+        <h1 className='font-bold mb-2 flex items-center justify-between '>CONNECTIVITY <IoMdArrowDropup onClick={() => setShowConect(!showConect)} 
+           className={`text-[#0BA42D] cursor-pointer text-3xl transition-transform duration-500 ${showConect === false ? 'rotate-180' : ''}`} /></h1>
+      {showConect && <ul className="flex items-start  mt-5 flex-col">
        {conectiv.map((conect, index) => (
           <li key={index} className="flex items-center mb-2"> 
        <input
@@ -105,14 +114,14 @@ const Aside = ({ setSelectedBrand, setSelectedColor, selectedBrand, selectedColo
       </label>
     </li>
   ))}
-</ul>
+</ul>}
 
 
         </div>
       <div className='w-full border border-[#454444] border-dashed mt-6 mb-6'></div>
       <div>
-        <h1 className='font-bold mb-2 flex items-center justify-between'>COLORS <IoMdArrowDropup className='text-[#0BA42D] cursor-pointer text-2xl' /></h1>
-        <ul className='flex flex-wrap mt-5'>
+        <h1 className='font-bold mb-2 flex items-center justify-between'>COLORS <IoMdArrowDropup onClick={() => setShowColor(!showColor)} className={`text-[#0BA42D] cursor-pointer text-3xl transition-transform duration-500 ${showColor === false ? 'rotate-180' : ''}`}/></h1>
+        {showColor && <ul className='flex flex-wrap mt-5'>
           {colorLoading && <p>Color Loading...</p>}
           {colorError && <p className='text-red-600'>{colorError}</p>}
           {colors.map((color, index) => (
@@ -124,7 +133,7 @@ const Aside = ({ setSelectedBrand, setSelectedColor, selectedBrand, selectedColo
               ></button>
             </li>
           ))}
-        </ul>
+        </ul>}
       </div>
       <div className='w-full border border-[#454444] border-dashed mt-6 mb-6'></div>
       <button onClick={() => reset() } className='bg-blue-600 text-white px-4 py-1 mt-4 font-semibold'>Reset</button>
