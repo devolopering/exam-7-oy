@@ -11,7 +11,7 @@ function App() {
   const [sortBy, setSortBy] = useState("");
 
   return (
-    <div>
+    <div className='select-none m-0 p-0 box-border'>
       <BrowserRouter>
         <Header />
         <Routes>

@@ -19,7 +19,7 @@ function Header() {
 
 
   return (
-    <div className='fixed font-inter top-0 right-0 left-0'>
+    <div className='fixed z-50 font-inter top-0 right-0 left-0'>
       <div className='bg-[#0D2613]  pt-[19px] pb-[18.25px] px-5'>
        <header className='flex items-center justify-between max-w-[1298px] text-white mx-auto'>
         <div className=' flex items-center gap-8'>
