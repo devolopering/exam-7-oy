@@ -72,11 +72,11 @@ const Aside = ({ setSelectedBrand, setSelectedColor, selectedBrand, selectedColo
       />
     </h1>
        {showBrand && <div className="flex flex-wrap flex-col">
-          <ul className="flex items-start mt-5 flex-col">
+          <ul className="flex items-start gap-2 mt-5 flex-col">
             {brandLoading && <p>Brand Loading...</p>}
             {brandError && <p className='text-red-600'>{brandError}</p>}
             {brands.map((brand, index) => (
-              <li key={index} className='flex items-center gap-3'>
+              <li key={index} className='flex  items-center gap-2'>
                 <input
                   type="checkbox"
                   id={brand}
@@ -95,7 +95,7 @@ const Aside = ({ setSelectedBrand, setSelectedColor, selectedBrand, selectedColo
       <div>
         <h1 className='font-bold mb-2 flex items-center justify-between '>CONNECTIVITY <IoMdArrowDropup onClick={() => setShowConect(!showConect)} 
            className={`text-[#0BA42D] cursor-pointer text-3xl transition-transform duration-500 ${showConect === false ? 'rotate-180' : ''}`} /></h1>
-      {showConect && <ul className="flex items-start  mt-5 flex-col">
+      {showConect && <ul className="flex items-start gap-2  mt-5 flex-col">
        {conectiv.map((conect, index) => (
           <li key={index} className="flex items-center mb-2"> 
        <input
@@ -125,10 +125,10 @@ const Aside = ({ setSelectedBrand, setSelectedColor, selectedBrand, selectedColo
           {colorLoading && <p>Color Loading...</p>}
           {colorError && <p className='text-red-600'>{colorError}</p>}
           {colors.map((color, index) => (
-            <li key={index} className='flex gap-3'>
+            <li key={index} className='flex flex-wrap'>
               <button
                 onClick={() => setSelectedColor(color)}
-                className={`w-[20px] h-[20px] border border-slate-700 rounded-full cursor-pointer mr-2 mb-2 ${selectedColor === color ? 'outline outline-2 outline-blue-600' : ''}`}
+                className={`w-6 h-6 border border-slate-700 rounded-full cursor-pointer mr-3 mb-2 ${selectedColor === color ? 'outline outline-2 outline-blue-600' : ''}`}
                 style={{ backgroundColor: color }}
               ></button>
             </li>
